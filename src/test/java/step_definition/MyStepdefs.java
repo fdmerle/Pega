@@ -37,19 +37,18 @@ public class MyStepdefs {
     }
 
     @And("^I press submit button$")
-    public void iPressSubmitButton(){
+    public void iPressSubmitButton() {
         testingGround.submitLogin(driver);
     }
 
     @Then("^I have to see text: \"([^\"]*)\"$")
     public void iHaveToSeeText(String arg0) {
-
         Assert.assertTrue(testingGround.loginSuccessfull(driver, arg0));
     }
-@After
-    public void clean(){
 
-    driver.getWebDriver().close();
-}
+    @After
+    public void clean() {
+        driver.getWebDriver().close();
+    }
 
 }

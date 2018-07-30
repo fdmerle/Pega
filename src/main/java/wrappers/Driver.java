@@ -31,7 +31,7 @@ public class Driver {
                 break;
             case FireFox:
                 webDriver = new FirefoxDriver();
-                implicitDelay(webDriver,Settings.implicitWait);
+                implicitDelay(webDriver, Settings.implicitWait);
                 break;
             case IE:
                 webDriver = new InternetExplorerDriver();
@@ -41,38 +41,39 @@ public class Driver {
         }
 
     }
-    private void implicitDelay(WebDriver webDriver,int delay){
+
+    private void implicitDelay(WebDriver webDriver, int delay) {
         webDriver.manage().timeouts().implicitlyWait(delay, TimeUnit.SECONDS);
         webDriver.manage().timeouts().pageLoadTimeout(Settings.loadingTime, TimeUnit.SECONDS);
 
     }
 
 
-    public boolean waitElementToBeVisible(String webElementXpath,int timeOut){
-        WebDriverWait wait = new WebDriverWait(getWebDriver(),timeOut);
+    public boolean waitElementToBeVisible(String webElementXpath, int timeOut) {
+        WebDriverWait wait = new WebDriverWait(getWebDriver(), timeOut);
         try {
             wait.until(ExpectedConditions.visibilityOf(getWebDriver().findElement(By.xpath(webElementXpath))));
             return true;
-        }catch (Exception e){
-            System.out.println("Not present: "+webElementXpath);
+        } catch (Exception e) {
+            System.out.println("Not present: " + webElementXpath);
             return false;
         }
     }
 
-    public void waitToBeClickable(By by, int time){
-        WebDriverWait wait = new WebDriverWait(getWebDriver(),time);
+    public void waitToBeClickable(By by, int time) {
+        WebDriverWait wait = new WebDriverWait(getWebDriver(), time);
         wait.until(ExpectedConditions.elementToBeClickable(by));
 
 
     }
 
-    public void waitElementToBeActive(String webElementXpath,int timeOut){
-        WebDriverWait wait = new WebDriverWait(getWebDriver(),timeOut);
+    public void waitElementToBeActive(String webElementXpath, int timeOut) {
+        WebDriverWait wait = new WebDriverWait(getWebDriver(), timeOut);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(webElementXpath)));
     }
 
-    public void waitElementToBecomeInvisible(String webElementXpath, int timeOut){
-        WebDriverWait wait = new WebDriverWait(getWebDriver(),timeOut);
+    public void waitElementToBecomeInvisible(String webElementXpath, int timeOut) {
+        WebDriverWait wait = new WebDriverWait(getWebDriver(), timeOut);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(webElementXpath)));
     }
 

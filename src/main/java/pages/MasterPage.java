@@ -10,10 +10,10 @@ public class MasterPage {
 
     public void doClick(Driver driver, WebObject webObject) {
         driver.getWebDriver().findElement(webObject.byObject).click();
- }
+    }
 
 
-    public void enterText(Driver driver, WebObject webObject, String textToEnter){
+    public void enterText(Driver driver, WebObject webObject, String textToEnter) {
 
         driver.getWebDriver().findElement(webObject.byObject).sendKeys(textToEnter);
 

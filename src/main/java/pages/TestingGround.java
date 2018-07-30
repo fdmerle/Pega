@@ -12,8 +12,6 @@ import java.util.HashMap;
 public class TestingGround extends MasterPage {
 
 
-
-
     private enum objectName {
         login,
         password,
@@ -36,13 +34,13 @@ public class TestingGround extends MasterPage {
     }
 
     public void loginToPage(Driver driver, String login, String password) {
-        enterText(driver,pageObjects.get(objectName.login),login);
-        enterText(driver,pageObjects.get(objectName.password),password);
+        enterText(driver, pageObjects.get(objectName.login), login);
+        enterText(driver, pageObjects.get(objectName.password), password);
 
     }
 
     public void submitLogin(Driver driver) {
-        doClick(driver,pageObjects.get(objectName.submit));
+        doClick(driver, pageObjects.get(objectName.submit));
 
     }
 

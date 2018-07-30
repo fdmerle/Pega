@@ -14,7 +14,7 @@ public class WebObject {
     public WebObject(String objType, String objValue) {
         objectType = objType;
         objectValue = objValue;
-        byGenerate(objValue,objType);
+        byGenerate(objValue, objType);
         objectValueOrig = objectValue;
     }
 
