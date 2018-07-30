@@ -18,7 +18,7 @@ public class TestingGround extends MasterPage {
         login,
         password,
         submit,
-        loginResult
+        loginResult,
     }
 
     private HashMap<objectName, WebObject> pageObjects;
@@ -30,6 +30,7 @@ public class TestingGround extends MasterPage {
                 put(objectName.password, new WebObject("id", "pwd"));
                 put(objectName.submit, new WebObject("xpath", ".//input[@type='submit']"));
                 put(objectName.loginResult, new WebObject("xpath", ".//h3[text()='%s']"));
+
             }
         };
     }

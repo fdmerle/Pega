@@ -14,15 +14,23 @@ public class WebObject {
     public WebObject(String objType, String objValue) {
         objectType = objType;
         objectValue = objValue;
-        switch (objType) {
+        byGenerate(objValue,objType);
+        objectValueOrig = objectValue;
+    }
+
+    private void byGenerate(String value, String type) {
+
+        switch (type) {
             case "xpath":
-                byObject = By.xpath(objValue);
+                byObject = By.xpath(value);
+                break;
             case "id":
-                byObject = By.id(objValue);
+                byObject = By.id(value);
+                break;
             default:
                 break;
         }
-        objectValueOrig = objectValue;
+
     }
 
     public int returnObjectAmount(Driver driver) {
@@ -33,7 +41,8 @@ public class WebObject {
 
     public WebObject addStringToXpath(String value) {
         objectValue = objectValueOrig;
-        String.format(objectValue, value);
+        objectValue = String.format(objectValue, value);
+        byGenerate(objectValue, objectType);
         return this;
     }
 
