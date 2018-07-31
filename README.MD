@@ -19,6 +19,10 @@ Git:
 
 $ git clone git@github.com:mdmerle/Pega.git
 
+Or
+
+refer to https://github.com/mdmerle/Pega 
+
 Run test
 -------------
 
