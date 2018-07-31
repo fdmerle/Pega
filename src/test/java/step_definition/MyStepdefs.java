@@ -21,7 +21,6 @@ import wrappers.Driver;
 public class MyStepdefs {
     private Driver driver = new Driver();
     private TestingGround testingGround;
-
     @Given("^I as a user open navigate to url \"([^\"]*)\" using browser \"([^\"]*)\"$")
     public void iAsAUserOpenNavigateToUrlUsingBrowser(String url, DriverTypes arg1) {
         driver.setWebDriver(arg1);

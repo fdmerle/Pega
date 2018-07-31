@@ -33,9 +33,6 @@ public class Driver {
                 webDriver = new FirefoxDriver();
                 implicitDelay(webDriver, Settings.implicitWait);
                 break;
-            case IE:
-                webDriver = new InternetExplorerDriver();
-                break;
             default:
                 webDriver = null;
         }
