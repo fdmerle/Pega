@@ -17,7 +17,7 @@ Clone the repo:
 
 Git:
 
-$ git clone git@github.com:fdmerle/Pega.git
+$ git clone git@github.com:mdmerle/Pega.git
 
 Run test
 -------------
